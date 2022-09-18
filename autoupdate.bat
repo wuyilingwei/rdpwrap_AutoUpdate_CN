@@ -31,6 +31,7 @@ setlocal EnableDelayedExpansion
 :: 翻译 by Yige-Yigeren
 :: -----------------------------------------
 :: 为了方便更改与设定更新源，已将更新源部分单独独立为文件subscription.bat
+call "%~dp0subscription.bat"
 :: -----------------------------------------
 
 :通用管理员权限检查模块
@@ -49,7 +50,7 @@ echo UAC.ShellExecute "%~s0", "", "", "runas", 1 >> "%temp%\getadmin.vbs"
 exit /B
 :start
 :通用管理员权限检查模块-结束
-
+title 自动更新RDPWarp脚本
 set autoupdate_bat="%~dp0autoupdate.bat"
 set subscription_bat="%~dp0subscription.bat"
 set autoupdate_log="%~dp0autoupdate.log"
@@ -69,13 +70,10 @@ echo.
 
 :: 检查启动参数
 if /i "%~1"=="-reset" (
-    echo :: ----------------------------------------- >subscription.bat
-    echo :: 更新rdpwrap.ini文件的更新源设置>>subscription.bat
-    echo :: ----------------------------------------->>subscription.bat
+    echo :: 更新rdpwrap.ini文件的更新源配置文件>subscription.bat
     echo :: 更新源示例>>subscription.bat
     echo :: set rdpwrap_ini_update_github_{num}="https://raw.githubusercontent.com/{user}/{repository}/(master/main)/res/rdpwrap.ini>>subscription.bat
-    echo :: ----------------------------------------->>subscription.bat
-    echo [-] All subscriptions has been removed
+    echo [*] All subscriptions has been removed
 )
 if /i "%~1"=="-log" (
     echo %autoupdate_bat% output from %date% at %time% > %autoupdate_log%
@@ -102,7 +100,7 @@ if /i not "%~1"=="" (
     echo     -taskremove  =  remove autorun of autoupdate.bat on startup in the schedule task
     goto :finish
 )
-:: check if file "RDPWInst.exe" exist
+:: 检查是否存在"RDPWInst.exe"
 if not exist %RDPWInst_exe% goto :error_install
 goto :start_check
 ::
@@ -189,14 +187,14 @@ if exist %rdpwrap_ini% (
 :: ------------------------------
 if exist %subscription_bat% (
     echo [+] 找到文件: %subscription_bat%.
-    :装入更新源配置文件
-    call "%~dp0subscription.bat"
 ) else (
     echo [-] 没有找到文件: %subscription_bat%^^!
     if %rdpwrap_installed%=="0" (
         call :install
     )
 )
+    :装入更新源配置文件
+    call "%~dp0subscription.bat"
 :: ----------------------------------------------------
 :: 7) 获取termsrv所需版本信息 %windir%\System32\termsrv.dll
 :: ----------------------------------------------------
@@ -221,11 +219,10 @@ for /f "tokens=2* usebackq" %%a in (
     set last_termsrv_dll_ver=%%b
 )
 if "%last_termsrv_dll_ver%"=="%termsrv_dll_ver%" (
-    echo [+] 当前dll版本信息"termsrv.dll v.%termsrv_dll_ver%"与记录中版本信息相符"termsrv.dll v.%last_termsrv_dll_ver%".
+   echo [+] 当前dll版本信息"termsrv.dll v.%termsrv_dll_ver%"与记录中版本信息相符"termsrv.dll v.%last_termsrv_dll_ver%".
 ) else (
     echo [-] 当前dll版本信息"termsrv.dll v.%termsrv_dll_ver%"与记录中版本信息不符"termsrv.dll v.%last_termsrv_dll_ver%"^^!
     echo [*] 正在更新注册表中的"termsrv.dll"版本信息...
-    reg add "HKEY_LOCAL_MACHINE\SOFTWARE\RDP-Wrapper\Autoupdate" /v "termsrv.dll" /t REG_SZ /d "%termsrv_dll_ver%" /f
     if %rdpwrap_installed%=="0" (
         call :install
     )
@@ -302,24 +299,24 @@ goto :eof
 :: 从更新源下载最新版本的rdpwrap.ini
 :: --------------------------------------------------------------------
 :update
-echo [*] check network connectivity...
+echo [*] 检查网络连接...
 :netcheck
-ping -n 1 google.com>nul
+ping -n 1 bing.com>nul
 if errorlevel 1 (
     goto waitnetwork
 ) else (
     goto download
 )
 :waitnetwork
-echo [.] Wait for network connection is available...
+echo [.] 等待网络连接可用...
 ping 127.0.0.1 -n 11>nul
 set /a retry_network_check=retry_network_check+1
-:: wait for a maximum of 5 minutes
+:: 最多等待5分钟
 if %retry_network_check% LSS 30 goto netcheck
 :download
 set /a github_location=github_location+1
 echo.
-echo [*] Download latest version of rdpwrap.ini from GitHub...
+echo [*] 正在从更新源下载最新的rdpwrap.ini...
 echo     -^> %rdpwrap_ini_url%
 for /f "tokens=* usebackq" %%a in (
     `cscript //nologo "%~f0?.wsf" //job:fileDownload %rdpwrap_ini_url% %rdpwrap_new_ini%`
@@ -327,26 +324,26 @@ for /f "tokens=* usebackq" %%a in (
     set "download_status=%%a"
 )
 if "%download_status%"=="-1" (
-    echo [+] Successfully download from GitHhub latest version to %rdpwrap_new_ini%.
+    echo [+] 成功从更新源下载最新版本的%rdpwrap_new_ini%.
     set rdpwrap_ini_check=%rdpwrap_new_ini%
     call :restart
 ) else (
-    echo [-] FAILED to download from GitHub latest version to %rdpwrap_new_ini%^^!
-    echo [*] Please check you internet connection/firewall and try again^^!
+    echo [-] 从更新源下载最新的%rdpwrap_new_ini%失败^^!
+    echo [*] 请在检查网络连接与防火墙后重试^^!
 )
 goto :eof
 ::
 :: --------------------------------
-:: Set Network Level Authentication
+:: 设置网络级别认证
 :: --------------------------------
 :setNLA
-echo [*] Set Network Level Authentication in the windows registry...
+echo [*] 在windows注册表中设置网络级别身份验证...
 reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp" /v SecurityLayer /t reg_dword /d 0x2 /f
 reg.exe add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp" /v MinEncryptionLevel /t reg_dword /d 0x2 /f
 goto :eof
 ::
 :: -------
-:: E X I T
+:: 退出
 :: -------
 :finish
 echo.
