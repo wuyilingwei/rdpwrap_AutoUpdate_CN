@@ -47,7 +47,8 @@ echo 请勿关闭该窗口，将在5秒后自动安装
 timeout /NOBREAK /t 5>nul
 cls
 echo 安装自动更新组件中...
-Xcopy *.* %windir:~0,3%\Program Files\RDP Wrapper /Q /Y
+Xcopy *.* "%windir:~0,3%\Program Files\RDP Wrapper" /Q /Y
+set path="%windir:~0,3%\Program Files\RDP Wrapper"
 cls
 echo ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 echo ┃ 〓 请选择自动更新渠道 〓         ┃
@@ -58,8 +59,19 @@ echo ┃ 2.GitHub直连                     ┃
 echo ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 echo 如果你并不清楚以上功能区别，在中国请按1，不在中国请按2.
 set/p "cho=[选择]"
-if %cho%==1 call autoupdate_CN.bat
-if %cho%==2 call autoupdate_Normal.bat
+if %cho%==1 set sub=GFW
+if %cho%==2 set sub=Nor
 if %cho%==3 goto menu
 echo [ 错误，无此选项 ]
 goto menu
+
+if %sub%=GFW (
+
+)
+if %sub%=Nor (
+    echo set rdpwrap_ini_update_github_1="https://raw.githubusercontent.com/asmtron/rdpwrap/master/res/rdpwrap.ini">>%path%/subscription.bat
+    echo set rdpwrap_ini_update_github_2="https://raw.githubusercontent.com/sebaxakerhtc/rdpwrap.ini/master/rdpwrap.ini"
+    echo set rdpwrap_ini_update_github_3="https://raw.githubusercontent.com/affinityv/INI-RDPWRAP/master/rdpwrap.ini"
+    echo set rdpwrap_ini_update_github_4="https://raw.githubusercontent.com/DrDrrae/rdpwrap/master/res/rdpwrap.ini"
+    echo set rdpwrap_ini_update_github_5="https://raw.githubusercontent.com/saurav-biswas/rdpwrap-1/master/res/rdpwrap.ini"
+)
