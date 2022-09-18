@@ -89,4 +89,7 @@ if %sub%==Nor (
 )
 echo [*] 安装已完成
 explorer "%spath%"
-echo 请点击autoupdate.bat以更新版本支持
+echo 请点击autoupdate.bat以更新版本支持。
+echo 在更新完配置文件后请点击RDPConf.exe中的Apply以启动。
+echo 如果能在RDPCheck.exe中登陆，则已成功。
+echo 你可以在Setting.bat中配置自动更新选项和修复选项
