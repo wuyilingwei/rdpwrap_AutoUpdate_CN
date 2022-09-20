@@ -31,7 +31,6 @@ setlocal EnableDelayedExpansion
 :: 翻译 by Yige-Yigeren
 :: -----------------------------------------
 :: 为了方便更改与设定更新源，已将更新源部分单独独立为文件subscription.bat
-call "%~dp0subscription.bat"
 :: -----------------------------------------
 
 :通用管理员权限检查模块
