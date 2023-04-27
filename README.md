@@ -51,3 +51,9 @@ autopdater首先会尝试官方的rdpwrap.ini。如果正式的rdpwrapper .ini�
 -taskadd =在计划任务程序中添加自启动
 
 -taskremove =在计划任务程序中删除自启动
+
+<p align="center">
+  <a href="https://star-history.com/#yige-yigeren/rdpwrap_AutoUpdate_CN&Date">
+    <img src="https://api.star-history.com/svg?repos=yige-yigeren/rdpwrap_AutoUpdate_CN&type=Date" alt="Star History Chart">
+  </a>
+</p>
