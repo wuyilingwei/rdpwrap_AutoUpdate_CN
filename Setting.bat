@@ -19,12 +19,12 @@ title RDPWarp设置程序
 :menu
 cls
 echo ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-echo ┃ 〓 RDPWarp设置      〓       ┃
+echo ┃ 〓 RDPWarp设置      〓           ┃
 echo ┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
-echo ┃ 1.开机时自动更新版本            ┃
-echo ┃ 2.开机时不自动更新版本          ┃
-echo ┃ 3.手动更新版本                 ┃
-echo ┃ 4.重新安装所有组件以修复错误    ┃
+echo ┃ 1.开机时自动更新版本             ┃
+echo ┃ 2.开机时不自动更新版本           ┃
+echo ┃ 3.手动更新版本                   ┃
+echo ┃ 4.重新安装所有组件以修复错误     ┃
 echo ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 set/p "cho=[选择]"
 if %cho%==1 call "%~dp0autoupdate.bat" -taskadd
