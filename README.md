@@ -15,6 +15,22 @@ RDP Wrapper Autoupdate 中文汉化版（包含GitHub国内支持）
 
 Windows Vista及以上受RDPWarp支持，但本项目及RDPwarpAutoupdate部分内容仅做了Windows 10 x64及以上支持（理论兼容Windows 7）
 
+## 安装
+
+[下载整合包](https://github.com/yige-yigeren/rdpwrap_AutoUpdate_CN/releases)
+
+运行install.bat，它会自动完成安装过程并打开安装文件夹
+
+在打开的文件夹中运行autoupdate.bat，直到RDPConf.exe打开后右侧显示[full support]。
+
+尝试运行RDPCheck.exe，如果能登录即为成功。
+
+使用Setting.bat配置程序行为。
+
+接下来是一些建议，避免出现不兼容的情况
+
+打开组策略 - 计算机配置 - 管理模板 - Windows组件 - Windows更新 - 管理从Windows更新提供的更新 - 功能和质量更新推荐配置为14天（避免出现windows更新了但破解没更新的尴尬问题）
+
 ## 修改
 
 首先对于RDP Wrapper Autoupdate功能进行了汉化，以及整合到了一个安装包内，并内置提供了绕过GFW获取配置文件更新（GFW可能导致github部分内容获取不正常）的方法。（请注意RDPConf.exe并没有进行汉化，不会有人连Apply都不会点吧~~才不是我懒了~~）
