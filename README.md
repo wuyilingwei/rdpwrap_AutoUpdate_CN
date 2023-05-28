@@ -27,7 +27,7 @@ Windows Vista及以上受RDPWarp支持，但本项目及RDPwarpAutoupdate部分�
 
 使用Setting.bat配置程序行为。
 
-接下来是一些建议，避免出现不兼容的情况
+**配置Windows更新延后** （推荐）
 
 打开组策略 - 计算机配置 - 管理模板 - Windows组件 - Windows更新 - 管理从Windows更新提供的更新 - 功能和质量更新推荐配置为14天（避免出现windows更新了但破解没更新的尴尬问题）
 
