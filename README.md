@@ -51,6 +51,10 @@ Windows Vista及以上受RDPWarp支持，但本项目及RDPwarpAutoupdate部分�
 
 Sakura Frp部分节点和github均有可能被阻断，推荐使用安全DNS（1.1.1.1或8.8.8.8），采取加速措施（steam++/cloudflare等），避免因特殊网络情况导致的更新/连接节点失败。
 
+**多用户均衡负载+避免高负载情况下远程桌面中断**
+
+推荐使用[Process Lasso](https://bitsum.com/)，有助于控制CPU和RAM均衡负载，确保稳定多用户体验，同时建议将Sakura Frp和本程序相关进程优先级设置为高于标准/高，确保高负载情况下远程桌面不会中断。
+
 ## 关于本程序
 
 首先对于RDP Wrapper Autoupdate功能进行了汉化，以及整合到了一个安装包内，并内置提供了绕过GFW获取配置文件更新（GFW可能导致github部分内容获取不正常）的方法。（请注意RDPConf.exe并没有进行汉化，不会有人连Apply都不会点吧~~才不是我懒了~~）
