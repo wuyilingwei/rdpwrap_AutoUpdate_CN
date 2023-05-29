@@ -31,6 +31,8 @@ Windows Vista及以上受RDPWarp支持，但本项目及RDPwarpAutoupdate部分�
 
 打开组策略 - 计算机配置 - 管理模板 - Windows组件 - Windows更新 - 管理从Windows更新提供的更新 - 功能和质量更新推荐配置为14天（避免出现windows更新了但破解没更新的尴尬问题）
 
+家庭版请先启用[组策略](https://www.bing.com/search?q=%E5%AE%B6%E5%BA%AD%E7%89%88%E6%B7%BB%E5%8A%A0%E7%BB%84%E7%AD%96%E7%95%A5)
+
 **配置公网访问**
 
 推荐[Sakura Frp](https://www.natfrp.com/)
