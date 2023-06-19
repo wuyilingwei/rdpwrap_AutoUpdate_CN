@@ -19,6 +19,8 @@ Windows Vista及以上受RDPWarp支持，但本项目及RDPwarpAutoupdate部分�
 
 [下载整合包](https://github.com/yige-yigeren/rdpwrap_AutoUpdate_CN/releases)
 
+直接下载自动的源文件zip压缩包即可 ~~（才不是我懒得每次更一小点就要重新打包了）~~
+
 运行install.bat，它会自动完成安装过程并打开安装文件夹
 
 在打开的文件夹中运行autoupdate.bat，直到RDPConf.exe打开后右侧显示[full support]。
@@ -27,9 +29,11 @@ Windows Vista及以上受RDPWarp支持，但本项目及RDPwarpAutoupdate部分�
 
 使用Setting.bat配置程序行为。
 
+## 一些进阶配置的简单教学
+
 **配置Windows更新延后 （推荐）**
 
-打开组策略 - 计算机配置 - 管理模板 - Windows组件 - Windows更新 - 管理从Windows更新提供的更新 - 功能和质量更新推荐配置为14天（避免出现windows更新了但破解没更新的尴尬问题）
+打开组策略 - 计算机配置 - 管理模板 - Windows组件 - Windows更新 - 管理从Windows更新提供的更新 - 功能和质量更新推荐配置为14天（避免出现windows更新了但破解更新源没更新的尴尬问题）
 
 家庭版请先启用组策略，本项目不提供相关教程，请自行[搜索](https://www.bing.com/search?q=%E5%AE%B6%E5%BA%AD%E7%89%88%E6%B7%BB%E5%8A%A0%E7%BB%84%E7%AD%96%E7%95%A5)。
 
@@ -41,11 +45,13 @@ Windows Vista及以上受RDPWarp支持，但本项目及RDPwarpAutoupdate部分�
 
 手机/电脑/平板均可以找到微软官方的远程桌面软件，填入节点:选节点时填的端口（不是3389那个，找不到打开配置文件remote_port = 那个）即可登录。客户端日志中有怎么连接的提示。
 
-月度流量是5G+每日签到，日均近3个G，按理来说是够的，速度（10 Mibps）也完全够，不够的话建议买流量包或会员[支持](https://www.natfrp.com/purchase/buy)一下，一个月10块真不贵，买完流量（71G+每日签到）和速率（24 Mibps）怎么算都够了。
+月度流量是5G+每日签到，日均近3个G，按理来说是够的，速度（10 Mibps）也算够，不够的话建议买流量包或会员[支持](https://www.natfrp.com/purchase/buy)一下，一个月10块真不贵，买完流量（71G+每日签到）和速率（24 Mibps）怎么算都够了。
 
 另：推荐选择两个节点，避免节点出现问题导致无法登录又线下没法去的尴尬情况。
 
 广告费结一下（bushi）
+
+有其他推荐的内网穿透建议可以提issue
 
 **DNS和加速**
 
@@ -53,7 +59,7 @@ Sakura Frp部分节点和github均有可能被阻断，推荐使用安全DNS（1
 
 **多用户均衡负载+避免高负载情况下远程桌面中断**
 
-推荐使用[Process Lasso](https://bitsum.com/)，有助于控制CPU和RAM均衡负载，确保稳定多用户体验，同时建议将Sakura Frp和本程序相关进程优先级设置为高于标准/高，确保高负载情况下远程桌面不会中断。
+推荐使用[Process Lasso](https://bitsum.com/)，有助于控制CPU和RAM均衡负载，确保稳定多用户体验，同时建议将Sakura Frp和本程序相关进程优先级设置为高于标准/高，确保高负载情况下远程桌面不会中断并且始终有足够的资源。
 
 ## 关于本程序
 
