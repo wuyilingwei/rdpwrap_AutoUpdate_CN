@@ -39,7 +39,7 @@ Windows Vista及以上受RDPWarp支持，但本项目及RDPwarpAutoupdate部分�
 
 **配置公网访问**
 
-推荐[Sakura Frp](https://www.natfrp.com/)
+推荐[Sakura Frp](https://www.natfrp.com/) (推荐理由：免费可用，易操作)
 
 根据你的需求和地理位置/网络环境选择节点，选择TCP隧道，隧道名称随意，本地端口选远程桌面3389，地址选127.0.0.1，接下来在用户处获取访问密钥，下载客户端用密钥登录开启端口和服务即可。
 
