@@ -103,3 +103,9 @@ autopdater首先会尝试官方的rdpwrap.ini。如果正式的rdpwrapper .ini�
     <img src="https://api.star-history.com/svg?repos=yige-yigeren/rdpwrap_AutoUpdate_CN&type=Date" alt="Star History Chart">
   </a>
 </p>
+
+---
+
+Copyright (C) 2023 Yige-Yigeren
+
+使用本项目需同时遵守[反 996 许可证](https://github.com/kattgu7/Anti-996-License/blob/master/LICENSE_CN_EN)
