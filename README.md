@@ -108,4 +108,4 @@ autopdater首先会尝试官方的rdpwrap.ini。如果正式的rdpwrapper .ini�
 
 Copyright (C) 2023 Yige-Yigeren
 
-使用本项目需同时遵守[反 996 许可证](https://github.com/kattgu7/Anti-996-License/blob/master/LICENSE_CN_EN)
+使用本项目需同时遵守[反劳动压迫许可证](https://github.com/yige-yigeren/rdpwrap_AutoUpdate_CN/blob/main/Additional_LICENSE_CN)
