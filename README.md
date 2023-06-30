@@ -19,7 +19,7 @@ Windows Vista及以上受RDPWarp支持，但本项目及RDPwarpAutoupdate部分�
 
 [下载整合包](https://github.com/yige-yigeren/rdpwrap_AutoUpdate_CN/releases)
 
-直接下载自动的源文件zip压缩包即可 ~~（才不是我懒得每次更一小点就要重新打包了）~~
+直接下载Source code(zip)压缩包即可 ~~（才不是我懒得每次更一小点就要重新打包了）~~
 
 运行install.bat，它会自动完成安装过程并打开安装文件夹
 
