@@ -31,15 +31,15 @@ Windows Vista及以上受RDPWarp支持，但本项目及RDPwarpAutoupdate部分�
 
 ## 一些进阶配置的简单教学
 
-**配置Windows更新延后 （推荐）**
+### **配置Windows更新延后 （推荐）**
 
 打开组策略 - 计算机配置 - 管理模板 - Windows组件 - Windows更新 - 管理从Windows更新提供的更新 - 功能和质量更新推荐配置为14天（避免出现windows更新了但破解更新源没更新的尴尬问题）
 
 家庭版请先启用组策略，本项目不提供相关教程，请自行[搜索](https://www.bing.com/search?q=%E5%AE%B6%E5%BA%AD%E7%89%88%E6%B7%BB%E5%8A%A0%E7%BB%84%E7%AD%96%E7%95%A5)。
 
-**配置公网访问**
+### **配置公网访问**
 
-推荐[Sakura Frp](https://www.natfrp.com/) (推荐理由：免费可用，易操作)
+#### 推荐[Sakura Frp](https://www.natfrp.com/) (推荐理由：免费可用，易操作)
 
 根据你的需求和地理位置/网络环境选择节点，选择TCP隧道，隧道名称随意，本地端口选远程桌面3389，地址选127.0.0.1，接下来在用户处获取访问密钥，下载客户端用密钥登录开启端口和服务即可。
 
@@ -51,13 +51,17 @@ Windows Vista及以上受RDPWarp支持，但本项目及RDPwarpAutoupdate部分�
 
 广告费结一下（bushi）
 
+#### 自建FRP服务
+
+具体步骤可以看我的[Blog](https://www.wuyilingwei.com/article/buildfrp.html)
+
 有其他推荐的内网穿透建议可以提issue
 
-**DNS和加速**
+### **DNS和加速**
 
 Sakura Frp部分节点和github均有可能被阻断，推荐使用安全DNS（1.1.1.1或8.8.8.8），采取加速措施（steam++/cloudflare等），避免因特殊网络情况导致的更新/连接节点失败。
 
-**多用户均衡负载+避免高负载情况下远程桌面中断**
+### **多用户均衡负载+避免高负载情况下远程桌面中断**
 
 推荐使用[Process Lasso](https://bitsum.com/)，有助于控制CPU和RAM均衡负载，确保稳定多用户体验，同时建议将Sakura Frp和本程序相关进程优先级设置为高于标准/高，确保高负载情况下远程桌面不会中断并且始终有足够的资源。
 
