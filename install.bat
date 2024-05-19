@@ -74,11 +74,11 @@ if %cho%==1 set sub=GFW
 if %cho%==2 set sub=Nor
 if %cho%==3 goto menu
 if %sub%==GFW (
-    echo set rdpwrap_ini_update_github_1="https://raw.fastgit.org/asmtron/rdpwrap/master/res/rdpwrap.ini">>"%spath%\subscription.bat"
-    echo set rdpwrap_ini_update_github_2="https://raw.fastgit.org/sebaxakerhtc/rdpwrap.ini/master/rdpwrap.ini">>"%spath%\subscription.bat"
-    echo set rdpwrap_ini_update_github_3="https://raw.fastgit.org/affinityv/INI-RDPWRAP/master/rdpwrap.ini">>"%spath%\subscription.bat"
-    echo set rdpwrap_ini_update_github_4="https://raw.fastgit.org/DrDrrae/rdpwrap/master/res/rdpwrap.ini">>"%spath%\subscription.bat"
-    echo set rdpwrap_ini_update_github_5="https://raw.fastgit.org/saurav-biswas/rdpwrap-1/master/res/rdpwrap.ini">>"%spath%"\subscription.bat
+    echo set rdpwrap_ini_update_github_1="https://raw.kkgithub.com/asmtron/rdpwrap/master/res/rdpwrap.ini">>"%spath%\subscription.bat"
+    echo set rdpwrap_ini_update_github_2="https://raw.kkgithub.com/sebaxakerhtc/rdpwrap.ini/master/rdpwrap.ini">>"%spath%\subscription.bat"
+    echo set rdpwrap_ini_update_github_3="https://raw.kkgithub.com/affinityv/INI-RDPWRAP/master/rdpwrap.ini">>"%spath%\subscription.bat"
+    echo set rdpwrap_ini_update_github_4="https://raw.kkgithub.com/DrDrrae/rdpwrap/master/res/rdpwrap.ini">>"%spath%\subscription.bat"
+    echo set rdpwrap_ini_update_github_5="https://raw.kkgithub.com/saurav-biswas/rdpwrap-1/master/res/rdpwrap.ini">>"%spath%"\subscription.bat
 )
 if %sub%==Nor (
     echo set rdpwrap_ini_update_github_1="https://raw.githubusercontent.com/asmtron/rdpwrap/master/res/rdpwrap.ini">>"%spath%\subscription.bat"
