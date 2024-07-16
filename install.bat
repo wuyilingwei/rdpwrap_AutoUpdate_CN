@@ -18,12 +18,12 @@ exit /B
 
 title RDPWarp主程序安装
 echo 本程序基于使用Apache-2.0许可证的开源项目制作，并以同样形式分发。
-echo 本软件仓库：https://github.com/yige-yigeren/rdpwrap_AutoUpdate_CN
+echo 本软件仓库：https://github.com/wuyilingwei/rdpwrap_AutoUpdate_CN
 echo 没有从GitHub直接下载的安装包可能包含恶意行为，为了你的设备安全，建议从Github或可信的Github镜像源下载。
 echo 请确认解压压缩包内所有文件，且目录不含特殊字符
 echo 如果觉得本软件好用请去Github点个star吧（跪求）
 timeout /NOBREAK /t 3 >nul
-start https://github.com/yige-yigeren/rdpwrap_AutoUpdate_CN
+start https://github.com/wuyilingwei/rdpwrap_AutoUpdate_CN
 timeout /NOBREAK /t 5 >nul
 cls
 echo .
@@ -74,11 +74,11 @@ if %cho%==1 set sub=GFW
 if %cho%==2 set sub=Nor
 if %cho%==3 goto menu
 if %sub%==GFW (
-    echo set rdpwrap_ini_update_github_1="https://raw.kkgithub.com/asmtron/rdpwrap/master/res/rdpwrap.ini">>"%spath%\subscription.bat"
-    echo set rdpwrap_ini_update_github_2="https://raw.kkgithub.com/sebaxakerhtc/rdpwrap.ini/master/rdpwrap.ini">>"%spath%\subscription.bat"
-    echo set rdpwrap_ini_update_github_3="https://raw.kkgithub.com/affinityv/INI-RDPWRAP/master/rdpwrap.ini">>"%spath%\subscription.bat"
-    echo set rdpwrap_ini_update_github_4="https://raw.kkgithub.com/DrDrrae/rdpwrap/master/res/rdpwrap.ini">>"%spath%\subscription.bat"
-    echo set rdpwrap_ini_update_github_5="https://raw.kkgithub.com/saurav-biswas/rdpwrap-1/master/res/rdpwrap.ini">>"%spath%"\subscription.bat
+    echo set rdpwrap_ini_update_github_1="https://cdn.jsdelivr.net/gh/asmtron/rdpwrap@master/res/rdpwrap.ini">>"%spath%\subscription.bat"
+    echo set rdpwrap_ini_update_github_2="https://cdn.jsdelivr.net/gh/sebaxakerhtc/rdpwrap.ini@master/rdpwrap.ini">>"%spath%\subscription.bat"
+    echo set rdpwrap_ini_update_github_3="https://cdn.jsdelivr.net/gh/affinityv/INI-RDPWRAP@master/rdpwrap.ini">>"%spath%\subscription.bat"
+    echo set rdpwrap_ini_update_github_4="https://cdn.jsdelivr.net/gh/DrDrrae/rdpwrap@master/res/rdpwrap.ini">>"%spath%\subscription.bat"
+    echo set rdpwrap_ini_update_github_5="https://cdn.jsdelivr.net/gh/saurav-biswas/rdpwrap-1@master/res/rdpwrap.ini">>"%spath%"\subscription.bat
 )
 if %sub%==Nor (
     echo set rdpwrap_ini_update_github_1="https://raw.githubusercontent.com/asmtron/rdpwrap/master/res/rdpwrap.ini">>"%spath%\subscription.bat"

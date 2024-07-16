@@ -17,7 +17,7 @@ Windows Vista及以上受RDPWarp支持，但本项目及RDPwarpAutoupdate部分�
 
 ## 安装
 
-[下载整合包](https://github.com/yige-yigeren/rdpwrap_AutoUpdate_CN/releases)
+[下载整合包](https://github.com/wuyilingwei/rdpwrap_AutoUpdate_CN/releases)
 
 ~~直接下载Source code(zip)压缩包即可~~ 为什么直接下载源码有问题（骂骂咧咧）
 
@@ -103,13 +103,13 @@ autopdater首先会尝试官方的rdpwrap.ini。如果正式的rdpwrapper .ini�
 -taskremove =在计划任务程序中删除自启动
 
 <p align="center">
-  <a href="https://star-history.com/#yige-yigeren/rdpwrap_AutoUpdate_CN&Date">
-    <img src="https://api.star-history.com/svg?repos=yige-yigeren/rdpwrap_AutoUpdate_CN&type=Date" alt="Star History Chart">
+  <a href="https://star-history.com/#wuyilingwei/rdpwrap_AutoUpdate_CN&Date">
+    <img src="https://api.star-history.com/svg?repos=wuyilingwei/rdpwrap_AutoUpdate_CN&type=Date" alt="Star History Chart">
   </a>
 </p>
 
 ---
 
-Copyright (C) 2023 Yige-Yigeren
+Copyright (C) 2023 wuyilingwei
 
-使用本项目需同时遵守[反劳动压迫许可证](https://github.com/yige-yigeren/rdpwrap_AutoUpdate_CN/blob/main/Additional_LICENSE_CN)
+使用本项目需同时遵守[反劳动压迫许可证](https://github.com/wuyilingwei/rdpwrap_AutoUpdate_CN/blob/main/Additional_LICENSE_CN)
