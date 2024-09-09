@@ -29,6 +29,8 @@ Windows Vista及以上受RDPWarp支持，但本项目及RDPwarpAutoupdate部分�
 
 使用Setting.bat配置程序行为。
 
+一般情况下，无需再配置RDP服务。
+
 ## 一些进阶配置的简单教学
 
 ### **配置Windows更新延后 （推荐）**
